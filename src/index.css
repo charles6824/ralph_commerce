@@ -194,3 +194,24 @@ a {
 	text-transform: uppercase;
 	font-weight: 600;
 }
+.hero {
+	height: 65vh;
+}
+
+.hero-bg {
+	position: relative;
+	width: 70%;
+	height: 65vh;
+	background: rgba(255, 255, 255, 0.9);
+	float: right;
+}
+
+.hero-info {
+	width: 40%;
+	padding: 15px;
+	transform: translate(50%, 50%);
+}
+
+.hero-bg img {
+	transform: translate(-50%, -50%);
+}
