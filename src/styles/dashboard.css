@@ -1,0 +1,36 @@
+.main-dash-bg {
+	background: #b58335;
+	border-radius: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	height: 300px;
+}
+
+.white-dash-bg {
+	background: #fff;
+	border-radius: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	height: 250px;
+}
+.red-dash-bg {
+	background: #f78080;
+	border-radius: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	height: 120px;
+}
+.yellow-dash-bg {
+	background: #dfac0f;
+	border-radius: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	height: 120px;
+}
+.blue-dash-bg {
+	background: #637de5;
+	border-radius: 10px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	height: 150px;
+}

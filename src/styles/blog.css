@@ -1,0 +1,87 @@
+.btn-main {
+	background: #b58335;
+	color: #0e4687;
+	font-weight: 600;
+}
+
+table,
+th,
+td {
+	border-collapse: separate;
+	padding: 0.5rem 1.5rem;
+}
+
+.table-container {
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0 10px;
+}
+
+/* Separate table head from table body */
+
+th {
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	color: #b58335;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+td {
+	color: #0e4687;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+th,
+td {
+	text-align: left;
+}
+
+/* Style each row (tr) in the table body */
+tbody tr {
+	background-color: #fae9ce;
+	border: 1px solid #f5f5f5;
+	padding: 2px;
+}
+
+tr td:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+tr td:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+td span#complete {
+	background: #4f952114;
+	font-size: 10px;
+	font-weight: 600;
+	color: #4f9521;
+	padding: 5px 10px;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+}
+td span#reject {
+	background: rgba(255, 0, 0, 0.08);
+	font-size: 10px;
+	font-weight: 600;
+	color: #ff0000;
+	padding: 5px 28px;
+	border-radius: 50px;
+}
+td span#pending {
+	background: rgba(249, 115, 22, 0.08);
+	font-size: 10px;
+	font-weight: 600;
+	color: #f97316;
+	padding: 5px 30px;
+	border-radius: 50px;
+}
