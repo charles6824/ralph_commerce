@@ -17,6 +17,15 @@ import Blog from './pages/Admin/Blog'
 import Users from './pages/Admin/Users'
 import Releases from './pages/Admin/Releases'
 import Login from "./pages/Admin/Login";
+import SingleBlog from "./pages/Admin/SingleBlog";
+import About from "./pages/About";
+import Teams from "./pages/Teams";
+import Service from "./pages/Service"
+import BlogPage from "./pages/Blog"
+import Course from "./pages/Course"
+import BookPage from "./pages/Book"
+import Contact from "./pages/Contact"
+import SingleBlogPage from "./pages/SingleBlog";
 
 
 const App = () => {
@@ -27,6 +36,14 @@ const App = () => {
 				<Suspense fallback={<PreLoader />}>
 					<Routes>
 						<Route exact path="/" element={<Home />} />
+						<Route exact path="/about" element={<About />} />
+						<Route exact path="/teams" element={<Teams />} />
+						<Route exact path="/services" element={<Service />} />
+						<Route exact path="/all-blog" element={<BlogPage />} />
+						<Route exact path="/blog/:id" element={<SingleBlogPage />} />
+						<Route exact path="/courses" element={<Course />} />
+						<Route exact path="/books" element={<BookPage />} />
+						<Route exact path="/contact" element={<Contact />} />
 						<Route exact path="/admin/login" element={<Login />} />
 						<Route path="*" element={<Error />} />
 						<Route
@@ -53,13 +70,18 @@ const App = () => {
 							/>
 							<Route
 								exact
-								path="books"
+								path="b_books"
 								element={<Books />}
 							/>
 							<Route
 								exact
 								path="blog"
 								element={<Blog />}
+							/>
+							<Route
+								exact
+								path="blog/:postID"
+								element={<SingleBlog />}
 							/>
 							<Route
 								exact

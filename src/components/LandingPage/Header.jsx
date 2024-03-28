@@ -1,73 +1,97 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../images/logo (2).png";
 import { AiOutlineUser } from "react-icons/ai";
 
 const Header = () => {
+
+	const [showNavbar, setShowNavbar] = useState(false);
+
+  const toggleNavbar = () => {
+    setShowNavbar(!showNavbar);
+		const list = document.getElementById("list")
+		// list.setAttribute("class", "show")
+		list.classList.toggle("show")
+  };
+
+
+
+	useEffect(() => {
+    const handleResize = () => {
+			console.log(window.innerWidth)
+      if (window.innerWidth <= 576) {
+        setShowNavbar(false);
+			}else{
+				setShowNavbar(true)
+			}
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 	return (
 		<header>
-			<nav className="navHeader shadow">
-				<div className="row">
-					<div className="col-5">
-						<ul className="first-ul">
-							<li className="">
-								<Link to="/">Home</Link>
-							</li>
-							<li className="">
-								<Link to="/">Publish with us</Link>
-							</li>
-							<li className="">
-								<Link to="/">Shop</Link>
-							</li>
-							<li className="">
-								<Link to="/">Services</Link>
-							</li>
-							<li className="">
-								<Link to="/">Blog</Link>
-							</li>
-						</ul>
-					</div>
-					<div className="col-2">
-						<img src={Logo} alt="" width="200px" />
-					</div>
-					<div className="col-5">
-						<ul className="second-ul mx-3">
-							<li className="">
-								<Link className="" to="">
-									FAQs
-								</Link>
-							</li>
-							<li className="">
-								<Link className="" to="">
-									CONTACT US
-								</Link>
-							</li>
-							<li className="">
-								<Link to="text-dark">
-									<AiOutlineUser />
-								</Link>
-							</li>
-							<li className="">
-								<Link to="">
-									<AiOutlineUser />
-								</Link>
-							</li>
-							<li className="">
-								<Link to="">
-									<AiOutlineUser />
-								</Link>
-							</li>
-							<li className="">
-								<Link to="">
-									<AiOutlineUser />
-								</Link>
-							</li>
-							<li className="">
-								<span>0/$0.00</span>
-							</li>
-						</ul>
-					</div>
+			<div className="bg-top-bar d-flex justify-content-between">
+				<div className=""></div>
+				<div className="">
+					<Link to="/login" className="text-white">
+						<AiOutlineUser /> Login / Register
+					</Link>
 				</div>
+			</div>
+			<nav className="navHeader shadow">
+				<Link to="/" className="navbar-brand">
+					<img src={Logo} alt="" width="200px" />
+				</Link>
+				<span className="bars d-md-none" onClick={toggleNavbar}></span>
+				{/* {showNavbar && (
+
+				)} */}
+					<ul className="nav-list" id="list">
+						<li className="nav-item">
+							<Link to="/" className="nav-link">
+								Home
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/about" className="nav-link">
+								About
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/teams" className="nav-link">
+							Our Community
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/services" className="nav-link">
+								Services
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/courses" className="nav-link">
+								Courses
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/books" className="nav-link">
+								Books
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/all-blog" className="nav-link">
+								Blog
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/contact" className="nav-link">
+								Contact Us
+							</Link>
+						</li>
+					</ul>
+				
 			</nav>
 		</header>
 	);

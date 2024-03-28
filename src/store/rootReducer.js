@@ -1,11 +1,27 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import fetchProductReducer from "./fetchProductSlice";
-import fetchMenuReducer from "./fetchMenuSlice";
+import createPostReducer from "./createBlogSlice";
+import authReducer from "./authSlice";
+import fetchPostsReducer from "./fetchPostsSlice";
+import fetchPostReducer from "./fetchPostSlice";
+import deletePostReducer from "./deletePostSlice";
+import createCommentReducer from "./createCommentSlice";
+import createBookReducer from "./createBookSlice";
+import fetchBooksReducer from "./fetchBooksSlice";
+import createHeroReducer from "./createHeroSlice";
+import fetchHerosReducer from "./fetchHerosSlice";
 
 
 const rootReducer = combineReducers({
-	fetchProduct: fetchProductReducer,
-	fetchMenu: fetchMenuReducer
+	createPost: createPostReducer,
+	auth: authReducer,
+	fetchPosts: fetchPostsReducer,
+	fetchPost: fetchPostReducer,
+	deletePost: deletePostReducer,
+	createComment: createCommentReducer,
+	createBook: createBookReducer,
+	fetchBooks: fetchBooksReducer,
+	createHero: createHeroReducer,
+	fetchHeros: fetchHerosReducer,
 });
 
 // Create a reset action type
